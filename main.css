@@ -1,0 +1,281 @@
+/* 📁 app-pwa/css/main.css */
+/* 메인화면 전용 스타일 */
+
+body {
+  margin: 0;
+  font-family: 'Pretendard', sans-serif;
+  background: #f9fbff;
+  color: #222;
+  transition: opacity 0.4s ease;
+}
+
+/* 페이지 전환 효과 */
+body.fade-out {
+  opacity: 0;
+}
+
+/* 버튼 스타일 (index.html과 일치시켜 유지) */
+button {
+  font-family: 'Pretendard', sans-serif;
+  padding: 16px 38px;
+  font-size: 1rem;
+  border-radius: 30px;
+  background-color: #eef3ff;
+  color: #1e293b;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  min-width: 220px;
+  border: 1px solid rgba(209, 213, 219, 0.35);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.2),
+    0 4px 8px rgba(0, 0, 0, 0.04);
+}
+
+button:hover {
+  background-color: #e0e6f5;
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,0.3),
+    0 6px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* 메인 버튼 (START AI MONITORING) */
+.main-button {
+  background: linear-gradient(135deg, #2B6CB0, #1E40AF);
+  border: none;
+  color: white;
+  min-width: 260px;
+  font-weight: 700;
+  box-shadow: 0 6px 14px rgba(30,64,175,0.35);
+}
+
+.main-button:hover {
+  background: linear-gradient(135deg, #1E40AF, #1E3A8A);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(30,64,175,0.45);
+}
+
+/* 페이지 전환용 페이드 효과 */
+body {
+  transition: opacity 0.4s ease;
+}
+body.fade-out {
+  opacity: 0;
+}
+
+/* ✳️ 중앙 사용자 이름 설정 팝업 */
+.center-popup {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(3px);
+  z-index: 100;
+}
+
+.popup-content {
+  background: #fff;
+  border-radius: 14px;
+  padding: 22px 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 230px; /* 전체 폭은 유지 */
+  height: auto; /* 자동 높이로 세로 낭비 제거 */
+  animation: fadeIn 0.25s ease;
+}
+
+.popup-content::before {
+  content: "USER NAME";
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #164e3f;
+  text-align: center;
+  margin-bottom: 12px;
+  letter-spacing: 0.4px;
+  border-bottom: 1.5px solid rgba(0, 0, 0, 0.08); /* 너무 진하지 않게 투명도 조정 */
+  padding-bottom: 6px;
+  text-transform: none; /* 혹시 폰트에 따라 전체 대문자 이슈 방지 */
+}
+
+
+
+
+/* 👤 + input 한 줄 */
+.popup-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.popup-row input {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 1rem;
+  width: 150px;
+  outline: none;
+  transition: border 0.2s;
+}
+.popup-row input:focus {
+  border-color: #aaa;
+}
+
+/* 버튼 */
+.popup-buttons {
+  display: flex;
+  justify-content: flex-end; /* 👉 오른쪽 정렬 */
+  gap: 8px;
+  margin-top: 6px;
+  width: 100%; /* 버튼 영역을 팝업 너비에 맞춤 */
+}
+
+.popup-buttons button {
+  border: none;
+  background: #f2f1ee; /* 미색 톤 유지 */
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  min-width: 70px;
+}
+
+.popup-buttons button:hover {
+  background: #e7e6e3;
+}
+
+
+
+
+#cancelBtn {
+  background: #f5f4f1; /* 밝은 미색 */
+  color: #2f2f2f;
+}
+#cancelBtn:hover {
+  background: #ebe9e6;
+}
+
+#saveBtn {
+  background: #e6e6e6; /* 👈 연한 회색 */
+  color: #1a1a1a;
+  font-weight: 600;
+}
+#saveBtn:hover {
+  background: #d9d9d9; /* hover 시 약간 더 진한 회색 */
+}
+
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ✅ 팝업 프로필 아이콘을 메인 프로필과 100% 동일하게 보이도록 고정 */
+.popup-profile.profile-icon {
+  all: unset; /* 기존 상속 제거 */
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #e5edff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  color: #1e3a8a;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: none;
+}
+
+.popup-profile.profile-icon:hover {
+  background-color: #d0dcff;
+}    
+
+/* ✅ 메인 섹션: 중앙 배치 */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 8%;
+  position: relative;
+}
+
+/* ✅ 버튼 래퍼 (AI 버튼 기준으로 설정 버튼 위치 조정) */
+.button-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ✅ AI MONITORING 버튼 - 수평 중앙 고정 */
+.main-button {
+  background: linear-gradient(135deg, #2B6CB0, #1E40AF);
+  border: none;
+  color: white;
+  min-width: 260px;
+  font-weight: 700;
+  box-shadow: 0 6px 14px rgba(30,64,175,0.35);
+  z-index: 2;
+}
+
+/* ⚙️ 설정 아이콘 버튼 */
+.settings-icon {
+  position: absolute;
+  left: calc(50% + 190px); /* AI 버튼 오른쪽 고정 */
+  transform: translateX(-50%);
+  background: transparent; /* 배경 완전 제거 */
+  border: none;            /* 테두리 제거 */
+  box-shadow: none;        /* 그림자 제거 */
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;           /* 포커스 테두리 제거 */
+}
+
+/* 버튼 클릭/포커스 시에도 outline 제거 */
+.settings-icon:focus,
+.settings-icon:active {
+  outline: none;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* 아이콘 자체 스타일 */
+.settings-icon i {
+  font-size: 1.8rem;
+  color: #1e3a8a;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+/* hover 시: 색상만 변경, 위치 고정 */
+.settings-icon:hover i {
+  color: #2b6cb0;
+  transform: rotate(20deg);
+}
+
+/* focus-visible(탭 이동 시 표시되는 점선 테두리) 제거 */
+.settings-icon:focus-visible {
+  outline: none;
+}

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI PostureCare</title>
+  <!-- 여기 두 줄 추가하거나 기존 아이콘 줄을 이렇게 바꿔줘 -->
+  <link rel="icon" type="image/png" href="assets/icon-192-v2.png" />
+  <link rel="apple-touch-icon" href="assets/icon-192-v2.png" />
+  
+  <link rel="manifest" href="manifest.json">
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Pretendard', sans-serif;
+      background: #f9fbff; /* 자연스러운 화이트톤 */
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* 상단 헤더 */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #1e3a8a;
+      z-index: 10;
+    }
+
+    .profile-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: #e5edff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      font-size: 1.4rem;
+    }
+
+    .profile-icon:hover {
+      background-color: #d0dcff;
+    }
+
+    /* 메인 이미지 */
+    .hero-image {
+      position: relative;
+      width: 100%;
+      height: 55vh;
+      background-image: url("chairs.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: brightness(0.93);
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+    }
+
+    .hero-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(249,251,255,0) 60%, rgba(249,251,255,1) 100%);
+    }
+
+    /* 중앙 버튼 섹션 */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      padding-bottom: 8%;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    button {
+      font-family: 'Pretendard', sans-serif;
+      padding: 16px 38px;
+      font-size: 1rem;
+      border-radius: 30px;
+      background-color: #eef3ff;
+      color: #1e293b;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      min-width: 220px;
+      border: 1px solid rgba(209, 213, 219, 0.35); /* 부드럽고 덜 눈에 띄는 테두리 */
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.2), /* 은은한 내부 그림자 */
+        0 4px 8px rgba(0, 0, 0, 0.04); /* 외부 그림자 */
+    }
+
+    button:hover {
+      background-color: #e0e6f5;
+      transform: translateY(-2px);
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.3),
+        0 6px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .main-button {
+      background: linear-gradient(135deg, #2B6CB0, #1E40AF);
+      border: none;
+      color: white;
+      min-width: 260px;
+      font-weight: 700;
+      box-shadow: 0 6px 14px rgba(30,64,175,0.35);
+    }
+
+    .main-button:hover {
+      background: linear-gradient(135deg, #1E40AF, #1E3A8A);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(30,64,175,0.45);
+    }
+
+    /* 푸터 */
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6b7280;
+      padding: 12px 0;
+    }
+
+    /* 반응형 */
+    @media (max-width: 768px) {
+      header {
+        padding: 16px 24px;
+        font-size: 1.1rem;
+      }
+
+      .hero-image {
+        height: 45vh;
+      }
+
+      .button-group {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      button {
+        min-width: 180px;
+        padding: 14px 28px;
+      }
+
+      .main-button {
+        min-width: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>AI PostureCare</div>
+    <div class="profile-icon">👤</div>
+  </header>
+
+  <!-- 📷 상단 이미지 섹션 -->
+  <div class="hero-image"></div>
+
+  <!-- 🎯 메인 버튼 그룹 -->
+  <main>
+    <div class="button-wrapper">
+      <button class="main-button">START AI MONITORING</button>
+      <button class="settings-icon" id="settingsBtn">
+        <i class="fa-solid fa-gear"></i>
+      </button>
+    </div>
+  </main>
+
+
+
+  <!-- ⬇️ 하단 푸터 -->
+  <footer>© 2025 AI PostureCare</footer>
+
+  <!-- 🔗 JS 파일 연결 -->
+  <script src="js/main.js"></script>
+
+  <!-- 중앙 팝업 -->
+  <div id="centerPopup" class="center-popup hidden">
+    <div class="popup-content">
+      <div class="popup-row">
+        <div class="popup-profile profile-icon">👤</div> <!-- ✅ 메인 아이콘과 동일한 스타일 -->
+        <input type="text" id="userNameInput" placeholder="이름을 입력하세요" />
+      </div>
+      <div class="popup-buttons">
+        <button id="cancelBtn">Cancel</button>
+        <button id="saveBtn">Save</button>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

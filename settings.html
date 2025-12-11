@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI PostureCare - 설정</title>
+  <link rel="stylesheet" href="css/settings.css" />
+</head>
+<body>
+  <!-- ✅ posture.html의 상단 구조 그대로 -->
+  <header>
+    <button id="backBtn" class="back-button">Back</button>
+    <h1>환경 설정</h1>
+    <div style="width:40px;"></div>
+  </header>
+
+  <!-- ✅ 설정 본문 -->
+  <main class="settings-container">
+    <!-- 음성 피드백 -->
+    <section class="setting-item">
+      <h2>음성 피드백</h2>
+      <label class="switch">
+        <input type="checkbox" id="voiceFeedback" />
+        <span class="slider"></span>
+      </label>
+    </section>
+
+    <section class="setting-item">
+        <h2>감지할 자세 선택</h2>
+        <div class="posture-options">
+            <label><input type="checkbox" value="neck" /> 거북목 자세</label>
+            <label><input type="checkbox" value="shoulder" /> 어깨 비대칭</label>
+            <label><input type="checkbox" value="tilt" /> 머리 기울기</label>
+            <label><input type="checkbox" value="rotation" /> 상체 회전</label>
+            <label><input type="checkbox" value="distance" /> 화면 거리</label>
+        </div>
+    </section>
+
+  </main>
+
+  <script src="js/settings.js"></script>
+</body>
+</html>

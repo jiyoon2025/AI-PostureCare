@@ -1,0 +1,15 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background: #f9f9f9;
+}
+video, canvas {
+  width: 480px;
+  height: 360px;
+  border: 1px solid #ccc;
+  margin: 10px;
+}
+#feedback {
+  font-size: 1.5em;
+  color: red;
+}
